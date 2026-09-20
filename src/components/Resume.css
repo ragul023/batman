@@ -1,0 +1,552 @@
+/* ============================================================
+   RESUME / DOSSIER
+============================================================ */
+
+.resume {
+  padding: 8rem 4rem;
+
+  border-top: 1px solid var(--bat-border);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   BACKGROUND DETAIL
+============================================================ */
+
+.resume::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -250px;
+  bottom: -250px;
+
+  border: 1px solid var(--bat-border);
+
+  border-radius: 50%;
+
+  opacity: 0.25;
+
+  pointer-events: none;
+}
+
+.resume::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -150px;
+  bottom: -150px;
+
+  border: 1px solid var(--bat-border);
+
+  border-radius: 50%;
+
+  opacity: 0.15;
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   CONTAINER
+============================================================ */
+
+.resume-container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.resume-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  gap: 3rem;
+
+  margin-bottom: 4rem;
+}
+
+
+/* ============================================================
+   FILE CODE
+============================================================ */
+
+.resume-code {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 0.35rem;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.55rem;
+
+  letter-spacing: 0.15em;
+}
+
+.resume-code span {
+  color: var(--bat-muted);
+}
+
+.resume-code strong {
+  font-weight: 400;
+
+  color: var(--bat-gold);
+
+  transition:
+    letter-spacing 0.3s ease;
+}
+
+.resume-card:hover ~ .resume-footer {
+  color: var(--bat-gold-dim);
+}
+
+
+/* ============================================================
+   RESUME CARD
+============================================================ */
+
+.resume-card {
+  display: flex;
+
+  align-items: stretch;
+
+  justify-content: space-between;
+
+  background: var(--bat-card);
+
+  border: 1px solid var(--bat-border);
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.resume-card:hover {
+  background: var(--bat-faint);
+
+  border-color: var(--bat-gold-dim);
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ============================================================
+   FILE INFORMATION
+============================================================ */
+
+.resume-file {
+  display: flex;
+
+  align-items: center;
+
+  gap: 2rem;
+
+  padding: 2.5rem;
+
+  flex: 1;
+}
+
+
+/* ============================================================
+   PDF ICON
+============================================================ */
+
+.resume-icon {
+  width: 65px;
+  height: 65px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid var(--bat-border);
+
+  background: var(--bat-black);
+
+  color: var(--bat-gold);
+
+  font-size: 1.5rem;
+
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.resume-card:hover .resume-icon {
+  border-color: var(--bat-gold);
+}
+
+
+/* ============================================================
+   INFORMATION
+============================================================ */
+
+.resume-type {
+  display: block;
+
+  margin-bottom: 0.5rem;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.55rem;
+
+  letter-spacing: 0.18em;
+
+  color: var(--bat-gold);
+}
+
+.resume-info h3 {
+  margin: 0 0 0.6rem;
+
+  font-family: var(--font-body);
+
+  font-size: 1.5rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+
+  color: var(--bat-text);
+}
+
+.resume-info p {
+  max-width: 520px;
+
+  margin: 0;
+
+  font-family: var(--font-body);
+
+  font-size: 0.85rem;
+
+  line-height: 1.7;
+
+  color: var(--bat-muted);
+}
+
+
+/* ============================================================
+   DOWNLOAD BUTTON
+============================================================ */
+
+.resume-download {
+  min-width: 250px;
+
+  padding: 2rem;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.75rem;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-left: 1px solid var(--bat-border);
+
+  background: var(--bat-black);
+
+  color: var(--bat-text);
+
+  text-decoration: none;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+
+  transition:
+    color 0.35s ease;
+}
+
+
+/* ============================================================
+   DOWNLOAD HOVER FILL
+============================================================ */
+
+.resume-download::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: var(--bat-gold);
+
+  transform: translateY(100%);
+
+  transition:
+    transform 0.45s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+.resume-download:hover::before {
+  transform: translateY(0);
+}
+
+
+/* Keep content above fill */
+
+.resume-download > * {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* ============================================================
+   DOWNLOAD ICONS
+============================================================ */
+
+.resume-download svg {
+  flex-shrink: 0;
+
+  transition:
+    transform 0.35s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+.resume-download:hover svg:first-child {
+  transform: translateY(3px);
+}
+
+.resume-download:hover svg:last-child {
+  transform: translate(
+    3px,
+    -3px
+  );
+}
+
+
+/* ============================================================
+   GOLD BOTTOM ACCENT
+============================================================ */
+
+.resume-accent {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  background: var(--bat-gold);
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition:
+    transform 0.5s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+.resume-card:hover .resume-accent {
+  transform: scaleX(1);
+}
+
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.resume-footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-top: 1rem;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.5rem;
+
+  letter-spacing: 0.15em;
+
+  color: var(--bat-muted);
+
+  transition:
+    color 0.3s ease;
+}
+
+.resume-footer-line {
+  height: 1px;
+
+  flex: 1;
+
+  background: var(--bat-border);
+}
+
+
+/* ============================================================
+   CURSOR INTERACTION
+============================================================ */
+
+.cursor-area,
+.cursor-hover {
+  cursor: pointer;
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 900px) {
+
+  .resume {
+    padding: 7rem 3rem;
+  }
+
+  .resume-card {
+    flex-direction: column;
+  }
+
+  .resume-download {
+    min-width: 0;
+
+    border-left: none;
+
+    border-top: 1px solid var(--bat-border);
+
+    padding: 1.5rem;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+
+  .resume {
+    padding: 6rem 1.5rem;
+  }
+
+  .resume-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 2rem;
+
+    margin-bottom: 3rem;
+  }
+
+  .resume-code {
+    align-items: flex-start;
+  }
+
+  .resume-file {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 1.5rem;
+
+    padding: 1.5rem;
+  }
+
+  .resume-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .resume-download {
+    width: 100%;
+  }
+
+  .resume-footer {
+    flex-wrap: wrap;
+
+    line-height: 1.5;
+  }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 400px) {
+
+  .resume {
+    padding: 5rem 1rem;
+  }
+
+  .resume-file {
+    padding: 1.25rem;
+  }
+
+  .resume-info h3 {
+    font-size: 1.1rem;
+  }
+
+}

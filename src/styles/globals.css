@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Rajdhani:wght@300;400;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bat-black: #080808;
+  --bat-dark: #0e0e0e;
+  --bat-card: #111111;
+  --bat-border: #1e1e1e;
+  --bat-gold: #c9a84c;
+  --bat-gold-dim: #8a6d2e;
+  --bat-gold-glow: rgba(201, 168, 76, 0.12);
+  --bat-white: #e8e6df;
+  --bat-text: #e8e6df;
+  --bat-muted: #555450;
+  --bat-faint: #1a1a18;
+  --bat-yellow: #f5c518;
+  --font-display: "Bebas Neue", sans-serif;
+  --font-heading: "Bebas Neue", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  --font-body: "Rajdhani", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bat-black);
+  color: var(--bat-white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.022) 2px,
+    rgba(0, 0, 0, 0.022) 4px
+  );
+  pointer-events: none;
+  z-index: 9997;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201, 168, 76, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 168, 76, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+::selection {
+  background: var(--bat-gold);
+  color: var(--bat-black);
+}
+a,
+button {
+  cursor: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 1px solid var(--bat-yellow);
+  outline-offset: 6px;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--bat-gold);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.section-label::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--bat-gold);
+  display: block;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: 0.05em;
+}

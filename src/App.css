@@ -1,0 +1,44 @@
+.App {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+}
+
+.App::before {
+  content: "";
+  position: fixed;
+  top: 15vh;
+  left: -12rem;
+  width: 32rem;
+  height: 32rem;
+  border: 1px solid rgba(201, 168, 76, 0.08);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4rem rgba(201, 168, 76, 0.025),
+    0 0 0 8rem rgba(201, 168, 76, 0.015);
+  pointer-events: none;
+  z-index: -1;
+}
+
+main > section {
+  position: relative;
+  scroll-margin-top: 88px;
+}
+
+main > section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 4rem;
+  width: 1px;
+  height: 5rem;
+  background: linear-gradient(to bottom, var(--bat-gold-dim), transparent);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  main > section::after {
+    right: 1.5rem;
+  }
+}

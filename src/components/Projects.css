@@ -1,0 +1,381 @@
+/* ============================================================
+   PROJECTS
+============================================================ */
+
+.projects {
+  padding: 8rem 4rem;
+
+  border-top: 1px solid var(--bat-border);
+
+  position: relative;
+}
+
+
+/* ============================================================
+   PROJECT GRID
+============================================================ */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 1px;
+
+  margin-top: 4rem;
+
+  background: var(--bat-border);
+
+  border: 1px solid var(--bat-border);
+}
+
+
+/* ============================================================
+   PROJECT CARD
+============================================================ */
+
+.project-card {
+  min-height: 190px;
+
+  padding: 2rem;
+
+  background: var(--bat-card);
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.project-card:hover {
+  background: var(--bat-faint);
+}
+
+
+/* ============================================================
+   GOLD HOVER LINE
+============================================================ */
+
+.project-card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  background: var(--bat-gold);
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition:
+    transform 0.45s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+.project-card:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* ============================================================
+   MISSION NUMBER
+============================================================ */
+
+.project-num {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  margin-bottom: 2.5rem;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.2em;
+
+  color: var(--bat-muted);
+}
+
+.project-num::after {
+  content: "";
+
+  width: 50px;
+
+  height: 1px;
+
+  background: var(--bat-border);
+
+  transition:
+    width 0.35s ease,
+    background 0.35s ease;
+}
+
+.project-card:hover .project-num::after {
+  width: 80px;
+
+  background: var(--bat-gold-dim);
+}
+
+
+/* ============================================================
+   PROJECT TITLE
+============================================================ */
+
+.project-title {
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(
+    1.4rem,
+    2.5vw,
+    2rem
+  );
+
+  line-height: 1.1;
+
+  letter-spacing: 0.04em;
+
+  color: var(--bat-text);
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  color: var(--bat-gold);
+
+  transform: translateX(3px);
+}
+
+
+/* ============================================================
+   PROJECT TAGS
+============================================================ */
+
+.project-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.45rem;
+
+  margin-top: 2rem;
+}
+
+
+/* ============================================================
+   TAG
+============================================================ */
+
+.tag {
+  padding: 0.35rem 0.65rem;
+
+  border: 1px solid var(--bat-border);
+
+  font-family: var(--font-mono);
+
+  font-size: 0.52rem;
+
+  letter-spacing: 0.1em;
+
+  color: var(--bat-muted);
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.project-card:hover .tag {
+  color: var(--bat-gold);
+
+  border-color: var(--bat-gold-dim);
+
+  background: rgba(
+    201,
+    168,
+    76,
+    0.03
+  );
+}
+
+
+/* ============================================================
+   VIEW ALL
+============================================================ */
+
+.projects-more {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 2rem;
+}
+
+
+/* ============================================================
+   VIEW ALL LINK
+============================================================ */
+
+.projects-more-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  padding-bottom: 0.5rem;
+
+  border-bottom: 1px solid var(--bat-border);
+
+  color: var(--bat-gold);
+
+  text-decoration: none;
+
+  font-family: var(--font-mono);
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.18em;
+
+  transition:
+    gap 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.projects-more-link:hover {
+  gap: 1.25rem;
+
+  border-color: var(--bat-gold);
+}
+
+
+/* ============================================================
+   ARROW
+============================================================ */
+
+.projects-more-arrow {
+  font-size: 1rem;
+
+  line-height: 0;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.projects-more-link:hover
+.projects-more-arrow {
+  transform: translateX(3px);
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 900px) {
+
+  .projects {
+    padding: 7rem 3rem;
+  }
+
+  .projects-grid {
+    margin-top: 3rem;
+  }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 768px) {
+
+  .projects {
+    padding: 6rem 1.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+
+    margin-top: 3rem;
+  }
+
+  .project-card {
+    min-height: 170px;
+
+    padding: 1.5rem;
+  }
+
+  .project-num {
+    margin-bottom: 2rem;
+  }
+
+  .project-title {
+    font-size: 1.35rem;
+  }
+
+  .project-tags {
+    margin-top: 1.5rem;
+  }
+
+  .projects-more {
+    justify-content: flex-start;
+  }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 420px) {
+
+  .projects {
+    padding: 5rem 1rem;
+  }
+
+  .project-card {
+    min-height: 155px;
+
+    padding: 1.25rem;
+  }
+
+  .tag {
+    font-size: 0.48rem;
+
+    padding: 0.3rem 0.5rem;
+  }
+
+}
