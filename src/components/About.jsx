@@ -39,7 +39,7 @@ export default function About() {
           think in systems, and ship work that matters.
         </p>
         <p className="about-text">
-          From the coastal town of Puducherry, building toward the heights of India's tech industry.
+          From the town of Salem, building toward the heights of India's tech industry.
           Every project is a mission. Every bug is a villain to defeat.
         </p>
         <div className="about-stats">
